@@ -24,7 +24,7 @@
     "ember-cli-htmlbars": "^3.0.0",
     "ember-cli-htmlbars-inline-precompile": "^1.0.3",
     "ember-cli-inject-live-reload": "^1.8.2",
-    "ember-cli-markdown-compiler": "pzuraq/ember-cli-markdown-compiler#example-site-fixes",
+    "ember-cli-markdown-templates": "^0.0.3",
     "ember-cli-sass": "^8.0.1",
     "ember-cli-sri": "^2.1.1",
     "ember-cli-template-lint": "^1.0.0-beta.1",
