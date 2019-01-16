@@ -66,9 +66,11 @@ export default Component.extend({
     const stack = this.stackMap.get(stackName);
     const item = stack.find(item => item && item.wormhole === wormhole);
 
-    const newNodes = item.get("nodes").clone();
-    item.set("nodes", newNodes);
-    item.set("_replaceNodes", true);
+    //const newNodes = item.get("nodes");
+    //make a copy because we are going to destroy the object
+    //const newNodes = Object.assign({}, item.get("nodes"));
+    //item.set("nodes", newNodes);
+    //item.set("_replaceNodes", true);
 
     next(() => stack.removeObject(item));
   },
@@ -82,9 +84,6 @@ export default Component.extend({
       const value = wormhole.get("value");
 
       const item = EmberObject.create({ nodes, wormhole, value });
-
-      // Reset visibility in case we made them visible, see below
-      nodes.css({ visibility: "hidden" });
 
       stack.pushObject(item);
     });
@@ -117,10 +116,6 @@ export default Component.extend({
       if (this.isDestroying || this.isDestroyed) {
         return;
       }
-      // If wormholes were made w/o animations, they need to be made visible manually.
-      this.$(view.element)
-        .find(".liquid-wormhole-element")
-        .css({ visibility: "visible" });
 
       // Clean empty stacks
       if (value === null) {

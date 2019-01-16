@@ -35,13 +35,15 @@ export default Component.extend({
 
   didUpdateAttrs() {
     this._super(...arguments);
-    this.get("liquidWormholeService").removeWormhole(this, this.get("to"));
-    this.get("liquidWormholeService").appendWormhole(this, this.get("to"));
+    //this.get("liquidWormholeService").removeWormhole(this, this.get("to"));
+    //this.get("liquidWormholeService").appendWormhole(this, this.get("to"));
   },
 
   didInsertElement() {
-    const nodes = this.$().children();
+    const nodes = this.element.childNodes;
     this.set("nodes", nodes);
+
+    console.log("setting nodes");
 
     this.element.className = "liquid-wormhole-container";
     this.element.id = "";
