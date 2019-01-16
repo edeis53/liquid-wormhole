@@ -14,15 +14,15 @@ export default function wormhole(context) {
     if (oldWormholeElement.length > 0) {
       const offset = oldWormholeElement.offset();
 
-      oldWormholeElement.css({
+      /*       oldWormholeElement.css({
         position: "absolute",
-        top: offset.top,
-        left: offset.left,
-        bottom: "",
-        right: "",
+        //top: offset.top,
+        //left: offset.left,
+        //bottom: "",
+        //right: "",
         margin: "0px",
         transform: ""
-      });
+      }); */
 
       this.oldElement = oldWormholeElement;
     }
@@ -39,15 +39,15 @@ export default function wormhole(context) {
     if (newWormholeElement.length > 0) {
       const offset = newWormholeElement.offset();
 
-      newWormholeElement.css({
+      /*       newWormholeElement.css({
         position: "absolute",
-        top: offset.top,
-        left: offset.left,
-        bottom: "",
-        right: "",
+        //top: offset.top,
+        //left: offset.left,
+        //bottom: "",
+        //right: "",
         margin: "0px",
         transform: ""
-      });
+      }); */
 
       this.newElement = newWormholeElement;
     }

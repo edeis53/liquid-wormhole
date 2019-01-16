@@ -1,10 +1,10 @@
-import Controller from '@ember/controller';
+import Controller from "@ember/controller";
 
 export default Controller.extend({
   showingOther: true,
   actions: {
     toggleContent() {
-      this.toggleProperty('showingOther');
+      this.toggleProperty("showingOther");
     }
   }
 });

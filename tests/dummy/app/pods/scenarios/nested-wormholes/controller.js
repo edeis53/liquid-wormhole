@@ -1,9 +1,9 @@
-import Controller from '@ember/controller';
+import Controller from "@ember/controller";
 
 export default Controller.extend({
   actions: {
     showInner() {
-      this.toggleProperty('showingInner');
+      this.toggleProperty("showingInner");
     }
   }
 });

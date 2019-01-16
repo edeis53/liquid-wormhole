@@ -1,1 +1,1 @@
-export { default } from 'liquid-wormhole/services/liquid-wormhole';
+export { default } from "liquid-wormhole/services/liquid-wormhole";

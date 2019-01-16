@@ -1,27 +1,35 @@
 /* global sinon */
-import { A } from '@ember/array';
+import { A } from "@ember/array";
 
 function transitionMap(app) {
-  return app.__container__.lookup('service:liquid-fire-transitions');
+  return app.__container__.lookup("service:liquid-fire-transitions");
 }
 
 function transitionName(name) {
   return sinon.match(function(value) {
     return value.animation ? value.animation.name === name : false;
-  }, 'expected transition ' + name);
+  }, "expected transition " + name);
 }
 
 export function ranTransition(app, assert, name) {
-  assert.ok(transitionMap(app).transitionFor.returned(transitionName(name)), `expected transition ${name}`);
+  assert.ok(
+    transitionMap(app).transitionFor.returned(transitionName(name)),
+    `expected transition ${name}`
+  );
 }
 
 export function noTransitionsYet(app, assert) {
   var tmap = transitionMap(app);
   var ranTransitions = A(tmap.transitionFor.returnValues);
-  assert.ok(!ranTransitions.any((transition) => transition.animation !== tmap.defaultAction()), 'expected no transitions');
+  assert.ok(
+    !ranTransitions.any(
+      transition => transition.animation !== tmap.defaultAction()
+    ),
+    "expected no transitions"
+  );
 }
 
 export function injectTransitionSpies(app) {
   var tmap = transitionMap(app);
-  sinon.spy(tmap, 'transitionFor');
+  sinon.spy(tmap, "transitionFor");
 }

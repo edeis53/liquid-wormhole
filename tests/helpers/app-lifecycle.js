@@ -1,8 +1,8 @@
-import $ from 'jquery';
-import { run } from '@ember/runloop';
-import { merge } from '@ember/polyfills';
-import Application from '../../app';
-import config from '../../config/environment';
+import $ from "jquery";
+import { run } from "@ember/runloop";
+import { merge } from "@ember/polyfills";
+import Application from "../../app";
+import config from "../../config/environment";
 
 export default startApp;
 
@@ -20,6 +20,6 @@ export function startApp(attrs) {
 }
 
 export function destroyApp(app) {
-  run(app, 'destroy');
-  $('.liquid-target-container').remove();
+  run(app, "destroy");
+  $(".liquid-target-container").remove();
 }
